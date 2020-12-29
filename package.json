@@ -1,0 +1,57 @@
+{
+  "name": "habbix",
+  "productName": "Habbix",
+  "version": "1.0.2",
+  "main": "app.js",
+  "description": "Habbix: Créez votre avatar, décorez votre appartement ! Tchattez avec vos amis.",
+  "author": "Asteroid Games",
+  "scripts": {
+    "start": "electron .",
+    "publish": "electron-builder --win -p always",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "electron": "11.1.0",
+    "electron-builder": "22.9.1"
+  },
+  "dependencies": {
+    "electron-updater": "4.3.5"
+  },
+  "build": {
+    "appId": "ws.leet.app",
+    "extraResources": [
+      "./flash/**"
+    ],
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "metusmeth",
+        "repo": "habbixapp"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "Habbix",
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "Habbix-${version}.${ext}"
+    }
+  }
+}
