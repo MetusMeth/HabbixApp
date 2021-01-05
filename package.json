@@ -2,7 +2,7 @@
   "name": "habbix",
   "productName": "Habbix",
   "debug": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "clientId": 344803986093708,
   "main": "app.js",
   "description": "Habbix: Créez votre avatar, décorez votre appartement ! Tchattez avec vos amis.",
